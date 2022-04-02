@@ -1,0 +1,9 @@
+INFO     numexpr.utils:utils.py:159 NumExpr defaulting to 8 threads.
+INFO     root:churn_script_logging_and_tests.py:32 Testing import_data: SUCCESS
+INFO     root:churn_script_logging_and_tests.py:40 imported dataframe is not empty
+INFO     root:churn_script_logging_and_tests.py:46 imported datafarme has no null values
+INFO     root:churn_library.py:58 SUCCESS: EDA performed successfully,plots are saved
+INFO     root:churn_script_logging_and_tests.py:59 All EDA plots were saved to image directory
+INFO     root:churn_script_logging_and_tests.py:92 data shape: 10127 rows and 28 columns
+INFO     root:churn_library.py:110 Training and testing datasets are generated
+INFO     root:churn_script_logging_and_tests.py:107 Testing train_models: SUCCESS
