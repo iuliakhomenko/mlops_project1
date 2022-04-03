@@ -1,4 +1,7 @@
 '''
+Author: Yuliia Khomenko
+Date Created: 3 Apr 2022
+
 This file contains all the constant variables used in churn_library.py
 '''
 

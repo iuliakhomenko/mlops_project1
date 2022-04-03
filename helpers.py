@@ -1,4 +1,7 @@
 """
+Author: Yuliia Khomenko
+Date Created: 3 Apr 2022
+
 This file contains small helper functions of the main script churn_library.py
 """
 import os
@@ -29,7 +32,8 @@ def plot_and_save(pd_series, figure_size=(20, 10), kind='hist', title=None):
 def generate_img_name():
     """
     small helper function using current time timestamp to generate file name of a png file
-    :return: str  filename
+    input: None
+    output: str  filename
     """
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
     return current_time + '.png'

@@ -1,6 +1,10 @@
 # library doc string
 """
-This file contains script to perform EDA, feature engineering
+Author: Yuliia Khomenko
+Date Created: 3 Apr 2022
+
+This file contains script to perform EDA, feature engineering, models
+training and results reporting
 """
 import logging
 import joblib
@@ -19,7 +23,6 @@ os.environ['QT_QPA_PLATFORM'] = 'offscreen'
 def import_data(pth):
     """
     returns dataframe for the csv found at pth
-
     input:
             pth: a path to the csv
     output:
@@ -138,7 +141,7 @@ def classification_report_image(y_train,
                     y_train, y_train_preds_lr, y_test, y_test_preds_lr)
 
 
-def feature_importance_plot(model, X_data, IMG_PATH):
+def feature_importance_plot(model, X_data, image_path):
     """
     creates and stores the feature importances plot in pth
     input:
@@ -159,7 +162,7 @@ def feature_importance_plot(model, X_data, IMG_PATH):
     plt.bar(range(X_data.shape[1]), importances[indices])
     # Add feature names as x-axis labels
     plt.xticks(range(X_data.shape[1]), names, rotation=90)
-    IMPORTANCES_PLOT_PTH = os.path.join(IMG_PATH, generate_img_name())
+    IMPORTANCES_PLOT_PTH = os.path.join(image_path, generate_img_name())
     plt.savefig(IMPORTANCES_PLOT_PTH)
     plt.close()
 
@@ -207,6 +210,14 @@ def train_models(X_train, X_test, y_train, y_test):
 
 
 def generate_predictions(model, X_train, X_test):
+    """
+    Generates predictions on trainin and testing datasets
+    :param model: sklearn model object
+    :param X_train: training dataset
+    :param X_test: testing dataset
+    :return: train_preds : array of predictions on training dataset
+            test_preds : array of predictions on testing dataset
+    """
     train_preds = model.predict(X_train)
     test_preds = model.predict(X_test)
     return train_preds, test_preds
